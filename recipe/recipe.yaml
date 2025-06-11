@@ -1,5 +1,5 @@
 context:
-  version: "2.60.3"
+  version: "3.0.1"
 
 package:
   name: langfuse-python
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/l/langfuse/langfuse-${{ version }}.tar.gz
-    sha256: 171c0caf07a26282bd0403c6c15886ef1f447def42d6570684c94d6d9ae61d6e
+    sha256: 7074d766a92e39582bd2b7f5e1651af9a643dcc84fa101e534d2d481234b1ec4
 
 build:
   number: 0
@@ -32,13 +32,16 @@ requirements:
     - idna >=3.7,<4.0
     - anyio >=4.4.0,<5.0.0
     - requests >=2,<3
+    - opentelemetry-api >=1.33.1,<2
+    - opentelemetry-sdk >=1.33.1,<2
+    - opentelemetry-exporter-otlp >=1.33.1,<2
 
 tests:
   - python:
       imports:
         - langfuse
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version: ${{ python_min }}.*
 
 about:
   summary: A client library for accessing langfuse
