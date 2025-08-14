@@ -1,5 +1,5 @@
 context:
-  version: "3.2.5"
+  version: "3.2.6"
 
 package:
   name: langfuse-python
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/l/langfuse/langfuse-${{ version }}.tar.gz
-    sha256: e85793c7c73412a18306f2178ae6475fb8acbe8fd3d91ddbdc9412ef241d13f6
+    sha256: dbbef739946a4cc9e1c2ea0a5d873d3c267eebf779fa6e5513bc0001d39c6579
 
 build:
   number: 0
