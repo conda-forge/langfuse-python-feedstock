@@ -1,5 +1,5 @@
 context:
-  version: "4.0.1"
+  version: "4.3.1"
 
 package:
   name: langfuse-python
@@ -7,34 +7,28 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/l/langfuse/langfuse-${{ version }}.tar.gz
-    sha256: 40a6daf3ab505945c314246d5b577d48fcfde0a47e8c05267ea6bd494ae9608e
+    sha256: fb83155d17c2bc96fdc7c749f10c8ae8b6be1e47619e31627b5a907f965a6580
 
 build:
   number: 0
   script: ${{ PYTHON }} -m pip install .
-  python:
-    entry_points:
-      - release = scripts.release:main
   noarch: python
 
 requirements:
   host:
     - python ${{ python_min }}.*
-    - poetry-core >=1.0.0
+    - uv-build >=0.11.2,<0.12.0
     - pip
   run:
     - python >=${{ python_min }}
     - httpx >=0.15.4,<1.0
-    - pydantic >=1.10.7,<3.0
+    - pydantic >=2,<3
     - backoff >=1.10.0
     - wrapt >=1.14,<2.0
-    - packaging >=23.2,<25.0
-    - idna >=3.7,<4.0
-    - anyio >=4.4.0,<5.0.0
-    - requests >=2,<3
+    - packaging >=23.2,<27.0
     - opentelemetry-api >=1.33.1,<2
     - opentelemetry-sdk >=1.33.1,<2
-    - opentelemetry-exporter-otlp >=1.33.1,<2
+    - opentelemetry-exporter-otlp-proto-http >=1.33.1,<2
 
 tests:
   - python:
